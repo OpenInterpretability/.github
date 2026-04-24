@@ -4,11 +4,11 @@
 
 ### Watch language models think.
 
-Open source infrastructure for mechanistic interpretability — trained SAEs, a feature-trace theater, circuit canvases, a public leaderboard, feature-based RL rewards, and 51 curated papers. All MIT. All reproducible.
+Open source infrastructure for mechanistic interpretability — trained SAEs, a feature-trace theater, circuit canvases, a public leaderboard, feature-based RL rewards, and 51 curated papers. All Apache-2.0. All reproducible.
 
 [![Live site](https://img.shields.io/badge/live-openinterp.org-8b5cf6?style=for-the-badge)](https://openinterp.org)
 [![PyPI](https://img.shields.io/pypi/v/openinterp.svg?style=for-the-badge&color=f97316)](https://pypi.org/project/openinterp/)
-[![License MIT](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](https://github.com/OpenInterpretability/web/blob/main/LICENSE)
+[![License Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-green?style=for-the-badge)](https://github.com/OpenInterpretability/web/blob/main/LICENSE)
 [![X @openinterp](https://img.shields.io/badge/X-@openinterp-000?style=for-the-badge)](https://x.com/openinterp)
 
 </div>
@@ -129,7 +129,7 @@ Same recipe end-to-end: TopK + AuxK + HF streaming checkpoints + SAELens-compati
 
 **Built in public. Every artifact public. Every negative result public.**
 
-MIT (code) · CC-BY 4.0 (docs) · 2026
+Apache-2.0 (code) · CC-BY 4.0 (docs) · 2026
 
 [openinterp.org](https://openinterp.org) · [github.com/OpenInterpretability](https://github.com/OpenInterpretability) · [pypi/openinterp](https://pypi.org/project/openinterp/)
 
