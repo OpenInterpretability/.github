@@ -9,7 +9,7 @@ Thank you for helping build the open interpretability stack. This file is the **
 3. **Include a test or a demo** for functional changes. Reviews go faster.
 4. **Be honest in the PR description.** If a number didn't replicate, say so.
 5. **Sign your commits** is nice-to-have, not required.
-6. **MIT license** — by contributing, you agree your code is released under MIT (CC-BY 4.0 for docs).
+6. **Apache-2.0 license** — by contributing, you agree your code is released under Apache-2.0 (CC-BY 4.0 for docs).
 
 ## What we especially want
 
