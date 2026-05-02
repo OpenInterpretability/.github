@@ -2,14 +2,14 @@
 
 # OpenInterpretability
 
-### Watch language models think.
+### Probes that ship. Standards that survive.
 
-Open source infrastructure for mechanistic interpretability — trained SAEs, a feature-trace theater, circuit canvases, a public leaderboard, feature-based RL rewards, and 51 curated papers. All Apache-2.0. All reproducible.
+Open-source infrastructure for mechanistic interpretability — production probes, SAE training pipelines, ProbeBench leaderboard with anti-Goodhart norms, RL-as-reward frameworks, and 51 curated papers. **Built in public. Every artifact public. Every negative result published.** All Apache-2.0.
 
 [![Live site](https://img.shields.io/badge/live-openinterp.org-8b5cf6?style=for-the-badge)](https://openinterp.org)
 [![PyPI](https://img.shields.io/pypi/v/openinterp.svg?style=for-the-badge&color=f97316)](https://pypi.org/project/openinterp/)
 [![License Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-green?style=for-the-badge)](https://github.com/OpenInterpretability/web/blob/main/LICENSE)
-[![X @openinterp](https://img.shields.io/badge/X-@openinterp-000?style=for-the-badge)](https://x.com/openinterp)
+[![X @0xCVYH](https://img.shields.io/badge/X-@0xCVYH-000?style=for-the-badge)](https://x.com/0xCVYH)
 
 </div>
 
@@ -19,12 +19,27 @@ Open source infrastructure for mechanistic interpretability — trained SAEs, a 
 
 | | |
 |---|---|
+| 🛡️ **[FabricationGuard](https://openinterp.org/products/fabricationguard)** | Production hallucination probe on Qwen3.6-27B. AUROC 0.88 cross-task, **−88% confident-wrong reduction**, ~1ms latency. Live HF Space + ZeroGPU demo. |
+| 🧬 **[ProbeBench v0.0.2](https://openinterp.org/probebench)** | First categorical leaderboard for activation probes. 8-axis ProbeScore with anti-Goodhart norms (`goodhart_resistance` axis built-in). |
 | 🎬 **[Trace Theater](https://openinterp.org/observatory/trace)** | Interactive SAE feature tracing — 10 scenarios, zero login, mobile-friendly |
 | 🔗 **[Circuit Canvas](https://openinterp.org/observatory/circuits)** | Figma-style attribution graphs over SAE features |
 | 📊 **[InterpScore leaderboard](https://openinterp.org/interpscore)** | Public composite SAE ranking (v0.0.1, weights editable via PR) |
 | 🚀 **[Training ladder](https://openinterp.org/train)** | 30-min free Colab → 4h free Kaggle → 22h paper-grade cloud |
-| 📦 **`pip install openinterp`** | [PyPI v0.1.0](https://pypi.org/project/openinterp/) — Atlas search + Trace generation |
+| 📦 **`pip install openinterp`** | [PyPI v0.2.1](https://pypi.org/project/openinterp/) — FabricationGuard, ProbeBench SDK, `safe_load_qwen36_lora` utility, Atlas search, Trace generation |
 | 📖 **[/research](https://openinterp.org/research)** | 51 curated canonical papers across SAE / circuits / probing / lenses / safety |
+
+---
+
+## 🔬 Recent findings (2026)
+
+| Finding | Status | Artifact |
+|---|---|---|
+| **Probe-detected grokking in multi-probe DPO** | Validated, NeurIPS MI Workshop submission planned Sep 2026 | [nb37 v2](https://huggingface.co/datasets/caiovicentino1/openinterp-37v2-multiprobe-dpo-extended) + [nb41 v2](https://huggingface.co/datasets/caiovicentino1/openinterp-41v2-grokking-extended) — phase ratio 2.596, fresh-probe AUROC 0.472→0.528, original probes flat |
+| **"Hallucination-Induction, Not Calibration"** | Submitted ICML 2026 MI Workshop, decision June 12 | Negative SAE steering result on Qwen3.6-27B + Claude-as-judge audit |
+| **Multi-probe ensemble OOD walk-back** | Honest negative published | [nb46](https://huggingface.co/datasets/caiovicentino1/openinterp-46-cross-distribution-ensemble) — 0/3 datasets generalized, walked back ProbePack universal-middleware claim publicly |
+| **Memory context suppresses CoT in reasoning models** | Novel observation, paper-5 reframe | [nb47](https://huggingface.co/datasets/caiovicentino1/openinterp-47-probe-gated-memory) — has_think drops 73%→50% with retrieved memories |
+| **Multi-probe GRPO U-shape dynamics** | Pending behavior eval | [nb43](https://huggingface.co/datasets/caiovicentino1/openinterp-43-multiprobe-grpo-full) — peak at 77% of training, drift after; argues for val-based early stopping |
+| **`.language_model.` LoRA bug + utility** | Shipped | `openinterp.safe_load_qwen36_lora()` v0.2.1+ — silent-failure fix discovered during paper-2 work, productized for community |
 
 ---
 
@@ -33,8 +48,8 @@ Open source infrastructure for mechanistic interpretability — trained SAEs, a 
 | Repo | What's in it | Lang |
 |---|---|---|
 | [**`web`**](https://github.com/OpenInterpretability/web) | Next.js site at **openinterp.org** — Trace Theater, Circuit Canvas, InterpScore leaderboard | TypeScript · Tailwind |
-| [**`notebooks`**](https://github.com/OpenInterpretability/notebooks) | **23 notebooks**: train SAEs from free-tier → paper-grade, discover features, steer, replicate circuits, probe, compute InterpScore | Jupyter · PyTorch |
-| [**`cli`**](https://github.com/OpenInterpretability/cli) | `pip install openinterp` — SDK + CLI for Atlas search, Trace generation | Python ≥ 3.10 |
+| [**`notebooks`**](https://github.com/OpenInterpretability/notebooks) | **47+ notebooks**: train SAEs from free-tier → paper-grade, multi-probe DPO/GRPO, ensemble OOD eval, probe-gated memory, grokking analysis | Jupyter · PyTorch |
+| [**`cli`**](https://github.com/OpenInterpretability/cli) | `pip install openinterp` v0.2.1 — FabricationGuard, ProbeBench SDK, safe Qwen3.6 LoRA loader, Atlas, Trace | Python ≥ 3.10 |
 | [**`mechreward`**](https://github.com/OpenInterpretability/mechreward) | Per-token SAE features as dense RL rewards. **+19 pp GSM8K** on Qwen3.5-4B (64% → 83% in 168 steps) | Python · TRL |
 | [`.github`](https://github.com/OpenInterpretability/.github) | Org profile + shared [Code of Conduct](./CODE_OF_CONDUCT.md) + [SECURITY](./SECURITY.md) | — |
 
@@ -100,10 +115,10 @@ Same recipe end-to-end: TopK + AuxK + HF streaming checkpoints + SAELens-compati
 
 | Quarter | Theme | Ships |
 |:--|:--|:--|
-| **Q1 2026** (now) | Observatory v0 | Trace Theater · Circuit Canvas · 23 notebooks · InterpScore v0.0.1 · `openinterp` v0.1.0 |
-| **Q2 2026** | Expansion | Atlas populated at 8+ models · Lab Sandbox beta · `openinterp` v0.2.0 (score/steer/circuit/publish) |
-| **Q3 2026** | Community | Recipe Store · Expeditions v1 (12 guided tutorials) · Interp Olympics Season 1 · 1 k MAU |
-| **Q4 2026** | Sustainability | Watchtower Enterprise beta · Model Partner Program · Reproducibility Vault |
+| **Q1 2026** ✅ | Observatory v0 | Trace Theater · Circuit Canvas · 23 notebooks · InterpScore v0.0.1 · `openinterp` v0.1.0 |
+| **Q2 2026** (now) | Production probes + standards | ✅ FabricationGuard · ✅ ProbeBench v0.0.2 · ✅ `openinterp` v0.2.1 · ✅ ICML MI Workshop submission · paper-2 grokking writeup · cross-distribution validation |
+| **Q3 2026** | Community + grants | NeurIPS MI Workshop submission · Pivotal Fellowship cohort (London Jun-Aug) · MATS Winter 2027 prep · Expeditions v1 |
+| **Q4 2026** | Multi-model scaling | Cross-model probe transfer · Watchtower Enterprise beta · Reproducibility Vault |
 
 [Full roadmap →](https://openinterp.org/roadmap) · [Manifesto →](https://openinterp.org/manifesto)
 
