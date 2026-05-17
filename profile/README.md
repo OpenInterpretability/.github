@@ -1,39 +1,25 @@
-<div align="center">
-
 # OpenInterpretability
 
-### Probes that ship. Standards that survive.
+Open-source infrastructure for mechanistic interpretability: production probes, an MCP server that lets any agent run interp on your Colab, SAE training pipelines, a public Atlas registry with Zenodo DOIs, and ProbeBench with anti-Goodhart norms. Apache-2.0 throughout.
 
-Open-source infrastructure for mechanistic interpretability — production probes, an **MCP server that lets any agent run interp on your Colab**, SAE training pipelines, a public Atlas registry with Zenodo DOIs, and ProbeBench leaderboard with anti-Goodhart norms. **Built in public. Every artifact public. Every negative result published.** All Apache-2.0.
+[openinterp.org](https://openinterp.org) · [pip install openinterp-mcp](https://pypi.org/project/openinterp-mcp/) · [pip install openinterp](https://pypi.org/project/openinterp/) · [License Apache 2.0](https://github.com/OpenInterpretability/web/blob/main/LICENSE)
 
-[![Live site](https://img.shields.io/badge/live-openinterp.org-8b5cf6?style=for-the-badge)](https://openinterp.org)
-[![PyPI openinterp-mcp](https://img.shields.io/pypi/v/openinterp-mcp.svg?style=for-the-badge&color=10b981&label=openinterp-mcp)](https://pypi.org/project/openinterp-mcp/)
-[![PyPI openinterp](https://img.shields.io/pypi/v/openinterp.svg?style=for-the-badge&color=f97316&label=openinterp)](https://pypi.org/project/openinterp/)
-[![License Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-green?style=for-the-badge)](https://github.com/OpenInterpretability/web/blob/main/LICENSE)
-[![X @0xCVYH](https://img.shields.io/badge/X-@0xCVYH-000?style=for-the-badge)](https://x.com/0xCVYH)
+## What's shipping right now
 
-</div>
-
----
-
-## 🏗️ What's shipping right now
-
-| | |
+| Project | Description |
 |---|---|
-| ⚡ **[openinterp-mcp v0.1.0](https://openinterp.org/mcp)** — **NEW** | MCP server + Colab backend. 8 typed primitives (`capture_acts`, `probe_eval`, `steer`, `sae_lookup`, `causality_protocol`, …). Works with Claude Code, Cursor, Cline, OpenHands, Aider. **Privacy-first: we never see your model, data, or keys.** Methodology built-in (3 mandatory baselines, 5-class verdict). |
-| 🛡️ **[agent-probe-guard v0.1](https://openinterp.org/products/agent-probe-guard)** | Detect-only SDK for agent capability + thinking. AUROC 0.85/0.85, p95 0.19ms, **skip 21% @ 86% accuracy → ~18% budget reduction**. PyPI v0.3.0. |
-| 🛡️ **[FabricationGuard](https://openinterp.org/products/fabricationguard)** | Production hallucination probe on Qwen3.6-27B. AUROC 0.88 cross-task, **−88% confident-wrong reduction**, ~1ms latency. Live HF Space + ZeroGPU demo. |
-| 🧬 **[ProbeBench v0.0.2](https://openinterp.org/probebench)** | First categorical leaderboard for activation probes. 8-axis ProbeScore with anti-Goodhart norms (`goodhart_resistance` axis built-in). |
-| 📚 **[Atlas registry](https://github.com/OpenInterpretability/registry)** | Public index of mech-interp publications. Schema v1, Zenodo DOIs auto-issued, HF datasets per entry, citation tracking via Semantic Scholar + arXiv. |
-| 🎬 **[Trace Theater](https://openinterp.org/observatory/trace)** | Interactive SAE feature tracing — 10 scenarios, zero login, mobile-friendly |
-| 🔗 **[Circuit Canvas](https://openinterp.org/observatory/circuits)** | Figma-style attribution graphs over SAE features |
-| 📊 **[InterpScore leaderboard](https://openinterp.org/interpscore)** | Public composite SAE ranking (v0.0.1, weights editable via PR) |
-| 🚀 **[Training ladder](https://openinterp.org/train)** | 30-min free Colab → 4h free Kaggle → 22h paper-grade cloud |
-| 📦 **`pip install openinterp`** | [PyPI v0.3.0](https://pypi.org/project/openinterp/) — agent-probe-guard, FabricationGuard, ProbeBench SDK, `safe_load_qwen36_lora`, Atlas search, Trace generation |
+| [openinterp-mcp v0.1.0](https://openinterp.org/mcp) | MCP server + Colab backend. 8 typed primitives (`capture_acts`, `probe_eval`, `steer`, `sae_lookup`, `causality_protocol`, …). Works with Claude Code, Cursor, Cline, OpenHands, Aider. Privacy-first — we never see your model, data, or keys. Methodology built-in (3 mandatory baselines, 5-class verdict). |
+| [agent-probe-guard v0.1](https://openinterp.org/products/agent-probe-guard) | Detect-only SDK for agent capability + thinking. AUROC 0.85/0.85, p95 0.19ms, skip 21% at 86% accuracy = ~18% budget reduction. PyPI v0.3.0. |
+| [FabricationGuard](https://openinterp.org/products/fabricationguard) | Production hallucination probe on Qwen3.6-27B. AUROC 0.88 cross-task, −88% confident-wrong reduction, ~1ms latency. Live HF Space + ZeroGPU demo. |
+| [ProbeBench v0.0.2](https://openinterp.org/probebench) | First categorical leaderboard for activation probes. 8-axis ProbeScore with anti-Goodhart norms (`goodhart_resistance` axis built-in). |
+| [Atlas registry](https://github.com/OpenInterpretability/registry) | Public index of mech-interp publications. Schema v1, Zenodo DOIs auto-issued, HF datasets per entry, citation tracking via Semantic Scholar + arXiv. |
+| [Trace Theater](https://openinterp.org/observatory/trace) | Interactive SAE feature tracing — 10 scenarios, zero login, mobile-friendly. |
+| [Circuit Canvas](https://openinterp.org/observatory/circuits) | Figma-style attribution graphs over SAE features. |
+| [InterpScore leaderboard](https://openinterp.org/interpscore) | Public composite SAE ranking (v0.0.1, weights editable via PR). |
+| [Training ladder](https://openinterp.org/train) | 30-min free Colab → 4h free Kaggle → 22h paper-grade cloud. |
+| `pip install openinterp` | [PyPI v0.3.0](https://pypi.org/project/openinterp/) — agent-probe-guard, FabricationGuard, ProbeBench SDK, `safe_load_qwen36_lora`, Atlas search, Trace generation. |
 
----
-
-## 🔬 Recent findings (2026)
+## Recent findings (2026)
 
 | Finding | Status | Artifact |
 |---|---|---|
@@ -48,7 +34,7 @@ Open-source infrastructure for mechanistic interpretability — production probe
 
 ---
 
-## 📂 Pick a repo
+## Pick a repo
 
 | Repo | What's in it | Lang |
 |---|---|---|
@@ -63,7 +49,7 @@ Open-source infrastructure for mechanistic interpretability — production probe
 
 ---
 
-## 🤖 First result in 10 minutes — via your agent
+## First result in 10 minutes — via your agent
 
 ```bash
 pip install "openinterp-mcp[server]"
@@ -77,97 +63,63 @@ Total time from Colab attach to first 5-class causal verdict: **~30 seconds**. [
 
 ---
 
-## 🚦 Four ways in — match your level
+## Four ways in — match your level
 
-<table>
-<tr>
-<td width="25%" valign="top">
+- **Zero-code** — read the [manifesto](https://openinterp.org/manifesto), share a Trace that surprised you on X tagging [@openinterp](https://x.com/openinterp), star the repos you use.
+- **Student** — [train your first SAE in 30 min](https://openinterp.org/train) on free Colab, run [InterpScore](https://openinterp.org/interpscore) on your result, pick a [good-first-issue](https://github.com/search?q=org%3AOpenInterpretability+is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22&type=issues).
+- **Researcher** — [install openinterp-mcp](https://openinterp.org/start), attach your Colab, run experiments via your agent, publish to the Atlas with a Zenodo DOI. ~10 min to first verdict.
+- **Safety team** — run the [Watchtower preview notebook](https://github.com/OpenInterpretability/notebooks/blob/main/notebooks/13_watchtower_preview.ipynb) on your traffic. [Request enterprise](mailto:hi@openinterp.org) early access (Q4 2026).
 
-### ✨ Zero-code
-Read the [manifesto](https://openinterp.org/manifesto). Share a Trace that surprised you on X tagging [@openinterp](https://x.com/openinterp). Star the repos you use.
-
-</td>
-<td width="25%" valign="top">
-
-### 📘 Student
-[Train your first SAE in 30 min](https://openinterp.org/train) on free Colab. Run [InterpScore](https://openinterp.org/interpscore) on your result. Pick a [good-first-issue](https://github.com/search?q=org%3AOpenInterpretability+is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22&type=issues).
-
-</td>
-<td width="25%" valign="top">
-
-### 🔬 Researcher
-[Install openinterp-mcp](https://openinterp.org/start), attach your Colab, run experiments via your agent, publish to the Atlas with a Zenodo DOI. ~10 min to first verdict.
-
-</td>
-<td width="25%" valign="top">
-
-### 🛡️ Safety team
-Run the [Watchtower preview notebook](https://github.com/OpenInterpretability/notebooks/blob/main/notebooks/13_watchtower_preview.ipynb) on your traffic. [Request enterprise](mailto:hi@openinterp.org) early access (Q4 2026).
-
-</td>
-</tr>
-</table>
-
-More paths: [openinterp.org/contribute →](https://openinterp.org/contribute)
+More paths: [openinterp.org/contribute](https://openinterp.org/contribute)
 
 ---
 
-## 📊 Training ladder — any model, any scale, zero gatekeeping
+## Training ladder — any model, any scale
 
 | Tier | Platform | VRAM | Cost | Model | Time |
-|:--|:--|:--|:--|:--|:--|
-| 🚀 **[Hobbyist](https://github.com/OpenInterpretability/notebooks/blob/main/notebooks/01_hobbyist_gemma2_2b_colab.ipynb)** | Colab Free T4 | 15 GB | **$0** | Gemma-2-2B | 30–40 min |
-| ⚡ **[Explorer](https://github.com/OpenInterpretability/notebooks/blob/main/notebooks/02_explorer_qwen35_4b_kaggle.ipynb)** | Kaggle 2× T4 | 32 GB | **$0** (30 h/wk) | Qwen3.5-4B (hybrid GDN) | 4–5 h |
-| 👑 **[Paper-grade](https://github.com/OpenInterpretability/notebooks/blob/main/notebooks/03_papergrade_qwen36_27b_cloud.ipynb)** | Cloud RTX 6000 Pro | 96 GB | ~$30–60 | Qwen3.6-27B | 20–24 h |
+|---|---|---|---|---|---|
+| [Hobbyist](https://github.com/OpenInterpretability/notebooks/blob/main/notebooks/01_hobbyist_gemma2_2b_colab.ipynb) | Colab Free T4 | 15 GB | $0 | Gemma-2-2B | 30–40 min |
+| [Explorer](https://github.com/OpenInterpretability/notebooks/blob/main/notebooks/02_explorer_qwen35_4b_kaggle.ipynb) | Kaggle 2× T4 | 32 GB | $0 (30 h/wk) | Qwen3.5-4B (hybrid GDN) | 4–5 h |
+| [Paper-grade](https://github.com/OpenInterpretability/notebooks/blob/main/notebooks/03_papergrade_qwen36_27b_cloud.ipynb) | Cloud RTX 6000 Pro | 96 GB | ~$30–60 | Qwen3.6-27B | 20–24 h |
 
 Same recipe end-to-end: TopK + AuxK + HF streaming checkpoints + SAELens-compatible export.
 
 ---
 
-## 🏛️ Four pillars
+## Four pillars
 
-- **🔬 [Observatory](https://openinterp.org/observatory)** — see the model (Trace Theater, Circuit Canvas, Atlas, Compare)
-- **🧪 [Laboratory](https://openinterp.org/laboratory)** — edit the model (Sandbox, Recipe Store, Auto-Interp, Counterfactual Studio) · Q2
-- **🛡️ [Watchtower](https://openinterp.org/watchtower)** — monitor the model (Feature Firehose API, Safety Watchlist, Audit Trail) · Q4 · enterprise
-- **🎓 [Academy](https://openinterp.org/academy)** — teach the world (Expeditions, Interp Olympics, Live Lectures, Repro Vault) · Q3
+- [Observatory](https://openinterp.org/observatory) — see the model (Trace Theater, Circuit Canvas, Atlas, Compare)
+- [Laboratory](https://openinterp.org/laboratory) — edit the model (Sandbox, Recipe Store, Auto-Interp, Counterfactual Studio) · Q2
+- [Watchtower](https://openinterp.org/watchtower) — monitor the model (Feature Firehose API, Safety Watchlist, Audit Trail) · Q4 · enterprise
+- [Academy](https://openinterp.org/academy) — teach the world (Expeditions, Interp Olympics, Live Lectures, Repro Vault) · Q3
 
 ---
 
-## 🗺️ Roadmap (12 months)
+## Roadmap (12 months)
 
 | Quarter | Theme | Ships |
-|:--|:--|:--|
-| **Q1 2026** ✅ | Observatory v0 | Trace Theater · Circuit Canvas · 23 notebooks · InterpScore v0.0.1 · `openinterp` v0.1.0 |
-| **Q2 2026** (now) | MCP infrastructure + probes + papers | ✅ openinterp-mcp v0.1.0 · ✅ agent-probe-guard v0.1 · ✅ FabricationGuard · ✅ ProbeBench v0.0.2 · ✅ `openinterp` v0.3.0 · ✅ Atlas registry · ✅ ICML MI Workshop paper-1 submission · ✅ papers 5/6/7 published drafts |
-| **Q3 2026** | Community + grants + Atlas backfill | NeurIPS MI Workshop submission · Pivotal Fellowship cohort · MATS Winter 2027 prep · Atlas seeded with 10+ entries · daily-interp-radar live |
-| **Q4 2026** | Multi-model scaling | Cross-model probe transfer · Watchtower Enterprise beta · Reproducibility Vault · day-one model support |
+|---|---|---|
+| Q1 2026 (done) | Observatory v0 | Trace Theater, Circuit Canvas, 23 notebooks, InterpScore v0.0.1, `openinterp` v0.1.0 |
+| Q2 2026 (now) | MCP infrastructure + probes + papers | openinterp-mcp v0.1.0, agent-probe-guard v0.1, FabricationGuard, ProbeBench v0.0.2, `openinterp` v0.3.0, Atlas registry, ICML MI Workshop paper-1 submission, papers 5/6/7 published drafts |
+| Q3 2026 | Community + grants + Atlas backfill | NeurIPS MI Workshop submission, Pivotal Fellowship cohort, MATS Winter 2027 prep, Atlas seeded with 10+ entries, daily-interp-radar live |
+| Q4 2026 | Multi-model scaling | Cross-model probe transfer, Watchtower Enterprise beta, Reproducibility Vault, day-one model support |
 
-[Full roadmap →](https://openinterp.org/roadmap) · [Manifesto →](https://openinterp.org/manifesto)
-
----
-
-## 💬 Community
-
-- 🟢 [**Good-first-issues** across all repos](https://github.com/search?q=org%3AOpenInterpretability+is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22&type=issues) — start here if you want to PR
-- 💬 [Discussions](https://github.com/OpenInterpretability/web/discussions) — "which repo should this live in?" type questions
-- 🤝 [Code of Conduct](./CODE_OF_CONDUCT.md) — Contributor Covenant 2.1; kindness is a feature
-- ✉️ [hi@openinterp.org](mailto:hi@openinterp.org) — safety reports · partnership inquiries · Watchtower early access
-- 🐦 [@openinterp on X](https://x.com/openinterp)
+[Full roadmap](https://openinterp.org/roadmap) · [Manifesto](https://openinterp.org/manifesto)
 
 ---
 
-## 🙏 Standing on the shoulders of
+## Community
 
-[Anthropic MCP](https://modelcontextprotocol.io) · [Neuronpedia](https://neuronpedia.org) · [Gemma Scope](https://huggingface.co/google/gemma-scope) · [Qwen-Scope](https://huggingface.co/Qwen) · [SAELens](https://github.com/jbloomAus/SAELens) · [Gao et al. 2024](https://arxiv.org/abs/2406.04093) · [Marks et al. 2024](https://arxiv.org/abs/2403.19647) · [Anthropic Transformer Circuits](https://transformer-circuits.pub) · [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens) · [nnsight](https://nnsight.net) · everyone before us.
+- [Good-first-issues across all repos](https://github.com/search?q=org%3AOpenInterpretability+is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22&type=issues) — start here if you want to PR
+- [Discussions](https://github.com/OpenInterpretability/web/discussions) — "which repo should this live in?" type questions
+- [Code of Conduct](./CODE_OF_CONDUCT.md) — Contributor Covenant 2.1
+- [hi@openinterp.org](mailto:hi@openinterp.org) — safety reports, partnership inquiries, Watchtower early access
+- [@openinterp on X](https://x.com/openinterp)
+
+## Built on
+
+[Anthropic MCP](https://modelcontextprotocol.io) · [Neuronpedia](https://neuronpedia.org) · [Gemma Scope](https://huggingface.co/google/gemma-scope) · [Qwen-Scope](https://huggingface.co/Qwen) · [SAELens](https://github.com/jbloomAus/SAELens) · [Gao et al. 2024](https://arxiv.org/abs/2406.04093) · [Marks et al. 2024](https://arxiv.org/abs/2403.19647) · [Anthropic Transformer Circuits](https://transformer-circuits.pub) · [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens) · [nnsight](https://nnsight.net).
 
 ---
 
-<div align="center">
-
-**Built in public. Every artifact public. Every negative result public.**
-
-Apache-2.0 (code) · CC-BY 4.0 (docs) · 2026
-
-[openinterp.org](https://openinterp.org) · [github.com/OpenInterpretability](https://github.com/OpenInterpretability) · [pypi/openinterp](https://pypi.org/project/openinterp/) · [pypi/openinterp-mcp](https://pypi.org/project/openinterp-mcp/)
-
-</div>
+Apache-2.0 (code) · CC-BY 4.0 (docs) · [openinterp.org](https://openinterp.org)
