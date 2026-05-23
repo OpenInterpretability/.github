@@ -2,7 +2,7 @@
 
 **When should we believe a mechanistic interpretability claim?**
 
-A protocol, a benchmark, and a registry — built from 13 months of work on Qwen3.6-27B.
+A protocol, a benchmark, and a registry — built from 11 studies on Qwen3.6-27B since launching OpenInterp in April 2026.
 
 > 11 studies. 6 walk-backs. 1 protocol.
 
