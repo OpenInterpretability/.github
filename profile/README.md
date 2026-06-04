@@ -22,7 +22,7 @@ decision-locator demo --model gpt2     # locate → sweep → steer, on a laptop
 ```
 
 📄 The arc, permanent DOIs:
-[#1 Tool-Entropy](https://doi.org/10.5281/zenodo.20368601) ·
+[#1 Tool-Entropy](https://doi.org/10.5281/zenodo.20368600) ·
 [#2 Right Locus](https://doi.org/10.5281/zenodo.20490278) ·
 [#3 Multi-Channel](https://doi.org/10.5281/zenodo.20490284) ·
 [#4 Modality Matters](https://doi.org/10.5281/zenodo.20490286) ·
