@@ -2,7 +2,7 @@
 
 **When should we believe a mechanistic interpretability claim — and where, inside a model, does a decision actually live?**
 
-Mechanistic interpretability of long-horizon LLM agents, built on Qwen3.6-27B since April 2026: a protocol, a benchmark, a registry — and the **WANDERING arc**, a six-paper study of why agents fail to stop that ends in the first positive.
+Mechanistic interpretability of long-horizon LLM agents, built on Qwen3.6-27B since April 2026: a protocol, a benchmark, a registry — and the **WANDERING arc**, an eleven-paper study of why agents fail to stop that ends in the first positive.
 
 [openinterp.org](https://openinterp.org) · [`decision-locator`](https://github.com/OpenInterpretability/decision-locator) · [`pip install openinterp`](https://pypi.org/project/openinterp/) · [`pip install openinterp-mcp`](https://pypi.org/project/openinterp-mcp/) · [Apache-2.0](https://github.com/OpenInterpretability/web/blob/main/LICENSE)
 
@@ -10,7 +10,7 @@ Mechanistic interpretability of long-horizon LLM agents, built on Qwen3.6-27B si
 
 ## ⭐ Featured — the WANDERING arc + `decision-locator`
 
-Long-horizon coding agents fail by **WANDERING**: they stay internally sure the task is solved but never emit the `finish` action, burning the whole turn budget. Across six papers (Qwen3.6-27B, SWE-bench Pro, all CC-BY-4.0) we showed the agent's "task-done" verdict is linearly decodable (AUROC 0.81–0.91) yet causally inert — no residual injection rescues it, and clamping the exact, named SAE "done" feature moves the probability of finishing by −0.001 — until we found where control actually lives.
+Long-horizon coding agents fail by **WANDERING**: they stay internally sure the task is solved but never emit the `finish` action, burning the whole turn budget. Across eleven papers (Qwen3.6-27B, SWE-bench Pro, all CC-BY-4.0) we showed the agent's "task-done" verdict is linearly decodable (AUROC 0.81–0.91) yet causally inert — no residual injection rescues it, and clamping the exact, named SAE "done" feature moves the probability of finishing by −0.001 — until we found where control actually lives.
 
 **The law:** the knowledge–action gap on agents is a *layer gap*. The decision is **known mid-stream** (the verdict, L23) but only **writable late** (L51–63, ~30 layers downstream). Patching that late, task-matched block makes a stuck agent emit a real `finish` call **42% of the time** (exact McNemar *p* = 0.031), from a 0% baseline.
 
@@ -21,15 +21,19 @@ pip install git+https://github.com/OpenInterpretability/decision-locator
 decision-locator demo --model gpt2     # locate → sweep → steer, on a laptop
 ```
 
-📄 The arc, permanent DOIs:
-[#1 Tool-Entropy](https://doi.org/10.5281/zenodo.20368600) ·
-[#2 Right Locus](https://doi.org/10.5281/zenodo.20490278) ·
-[#3 Multi-Channel](https://doi.org/10.5281/zenodo.20490284) ·
-[#4 Modality Matters](https://doi.org/10.5281/zenodo.20490286) ·
-[#5 Verdict Circuit](https://doi.org/10.5281/zenodo.20532769) ·
-**[#6 The Lever Is Late](https://doi.org/10.5281/zenodo.20534219)** ·
-[companion note](https://doi.org/10.5281/zenodo.20500053)
-— read them at [openinterp.org/research](https://openinterp.org/research).
+📄 The arc, 11 beats, permanent DOIs (each resolves to the latest version):
+**[#1 WANDERING](https://doi.org/10.5281/zenodo.20368600)** ·
+[#2 It is finalization, not competence](https://doi.org/10.5281/zenodo.20490285) ·
+[#3 Detect ≠ control](https://doi.org/10.5281/zenodo.20532768) ·
+[#4 The lever is late](https://doi.org/10.5281/zenodo.20534218) ·
+[#5 It generalizes — and it brakes](https://doi.org/10.5281/zenodo.20679286) ·
+[#6 The authorization direction](https://doi.org/10.5281/zenodo.20683622) ·
+[#7 Felt, not granted](https://doi.org/10.5281/zenodo.20685263) ·
+[#8 The late channel](https://doi.org/10.5281/zenodo.20752895) ·
+[#9 Located, not secured](https://doi.org/10.5281/zenodo.20764857) ·
+[#10 The criterion cannot see what it does not measure](https://doi.org/10.5281/zenodo.21175758) ·
+[#11 The action lags the answer](https://doi.org/10.5281/zenodo.21250691)
+— read them at [openinterp.org/research](https://openinterp.org/research). Companion note, not a beat: [No Better Than Behavioral](https://doi.org/10.5281/zenodo.20500053).
 
 ---
 
@@ -43,8 +47,8 @@ decision-locator demo --model gpt2     # locate → sweep → steer, on a laptop
 ### Research artifacts
 | Repo | What |
 |---|---|
-| **[openinterp-swebench-harness](https://github.com/OpenInterpretability/openinterp-swebench-harness)** | Instrumented agent harness capturing SAE feature trajectories during agent reasoning on SWE-bench Pro. Substrate for the six-paper WANDERING arc. |
-| **[decision-locator](https://github.com/OpenInterpretability/decision-locator)** | `pip install`-able, model-agnostic tool: find the layer where a model commits a decision, and steer it. The method behind WANDERING arc paper #6. CLI + Colab + CI. |
+| **[openinterp-swebench-harness](https://github.com/OpenInterpretability/openinterp-swebench-harness)** | Instrumented agent harness capturing SAE feature trajectories during agent reasoning on SWE-bench Pro. Substrate for the eleven-paper WANDERING arc. |
+| **[decision-locator](https://github.com/OpenInterpretability/decision-locator)** | `pip install`-able, model-agnostic tool: find the layer where a model commits a decision, and steer it. The method behind arc beat #4, *The lever is late*. CLI + Colab + CI. |
 | **[inspect-tool-entropy-collapse](https://github.com/OpenInterpretability/inspect-tool-entropy-collapse)** | The tool-entropy-collapse WANDERING detector as an Inspect eval (UK AISI `inspect_evals` submission). |
 | **[mechreward](https://github.com/OpenInterpretability/mechreward)** | Mechanistic interpretability as reward signal for RL training. SAE features + GRPO + anti-Goodhart framework. |
 
